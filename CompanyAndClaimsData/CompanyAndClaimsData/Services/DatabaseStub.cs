@@ -48,9 +48,7 @@ public class DatabaseStub : IDatabaseService
         if (claimIndex == -1)
             return false;
         
-        Claims claim = StubData.claimsData[claimIndex];
-        claim = updatedClaim;
-        StubData.claimsData[claimIndex] = claim;
+        StubData.claimsData[claimIndex] = updatedClaim;
 
         return true;
     }

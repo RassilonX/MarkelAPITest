@@ -1,23 +1,22 @@
 ﻿using Newtonsoft.Json;
 
-namespace CompanyAndClaimsData.Models
+namespace CompanyAndClaimsData.Models;
+
+public class Claims
 {
-    public class Claims
-    {
-        public int CompanyId { get; set; }
+    public int CompanyId { get; set; }
 
-        public string UCR {  get; set; }
+    public string UCR {  get; set; }
 
-        public DateTime ClaimDate { get; set; }
+    public DateTime ClaimDate { get; set; }
 
-        public DateTime LossDate { get; set; }
+    public DateTime LossDate { get; set; }
 
-        [JsonProperty("Assured Name")]
-        public string AssuredName { get; set; }
+    [JsonProperty("Assured Name")]
+    public string AssuredName { get; set; }
 
-        [JsonProperty("Incurred Loss")]
-        public string IncurredLoss { get; set; }
+    [JsonProperty("Incurred Loss")]
+    public decimal IncurredLoss { get; set; }
 
-        public bool closed { get; set; }
-    }
+    public bool closed { get; set; }
 }

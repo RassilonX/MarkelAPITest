@@ -28,8 +28,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.MapCompanyEndpoints();
-
-//app.MapClaimsEndpoints();
-
 app.Run();
