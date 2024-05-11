@@ -6,18 +6,18 @@ namespace CompanyAndClaimsData.Services;
 
 public class DatabaseStub : IDatabaseService
 {
-    public Claims GetClaimByUCR(string claimId)
+    public Task<Claims> GetClaimByUCR(string claimId)
     {
         foreach (var claim in StubData.claimsData)
         {
             if (claim.UCR == claimId)
-                return claim;
+                return Task.FromResult(claim);
         }
 
         return null;
     }
 
-    public IEnumerable<Claims> GetClaimsByCompanyId(int companyId)
+    public Task<List<Claims>> GetClaimsByCompanyId(int companyId)
     {
         var result = new List<Claims>();
 
@@ -27,30 +27,30 @@ public class DatabaseStub : IDatabaseService
                 result.Add(claim);
         }
 
-        return result;
+        return Task.FromResult(result);
     }
 
-    public Company GetCompanyById(int id)
+    public Task<Company> GetCompanyById(int id)
     {
         foreach (var company in StubData.companiesData)
         {
             if (company.Id == id)
-                return company;
+                return Task.FromResult(company);
         }
 
         return null;
     }
 
-    public bool UpdateDatabase(Claims updatedClaim)
+    public Task<bool> UpdateDatabase(Claims updatedClaim)
     {
         var claimIndex = StubData.claimsData.FindIndex(c => c.UCR == updatedClaim.UCR);
 
         if (claimIndex == -1)
-            return false;
+            return Task.FromResult(false);
         
         StubData.claimsData[claimIndex] = updatedClaim;
 
-        return true;
+        return Task.FromResult(true);
     }
 }
 

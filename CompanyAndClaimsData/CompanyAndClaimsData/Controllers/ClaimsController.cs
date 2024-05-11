@@ -28,7 +28,7 @@ public class ClaimsController : ControllerBase
         if (companyExists == null)
             return NotFound(JsonConvert.SerializeObject("Company does not exist"));
 
-        var data = _databaseService.GetClaimsByCompanyId(companyId);
+        var data = _databaseService.GetClaimsByCompanyId(companyId).Result;
 
         if (data?.Any() == false) 
             return NotFound(JsonConvert.SerializeObject("No claim exists for this company"));
@@ -39,7 +39,7 @@ public class ClaimsController : ControllerBase
     [HttpGet("Claim/{claimId}")]
     public IActionResult Claim(string claimId)
     {
-        var data = _databaseService.GetClaimByUCR(claimId);
+        var data = _databaseService.GetClaimByUCR(claimId).Result;
 
         if (data == null)
             return NotFound(JsonConvert.SerializeObject("Claim does not exist"));
@@ -59,12 +59,12 @@ public class ClaimsController : ControllerBase
         if (claimDto == null || claimDto.UCR != claimId)
             return BadRequest(JsonConvert.SerializeObject("Invalid Request"));
 
-        var data = _databaseService.GetClaimByUCR(claimDto.UCR);
+        var data = _databaseService.GetClaimByUCR(claimDto.UCR).Result;
 
         if (data == null)
             return NotFound(JsonConvert.SerializeObject("Claim does not exist"));
 
-        var result = _databaseService.UpdateDatabase(claimDto);
+        var result = _databaseService.UpdateDatabase(claimDto).Result;
 
         if (!result)
             return BadRequest(JsonConvert.SerializeObject("Failed to update the database"));

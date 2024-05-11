@@ -5,13 +5,13 @@ namespace CompanyAndClaimsData.Services
     public interface IDatabaseService
     {
         //Company Table
-        public Company GetCompanyById(int id);
+        public Task<Company> GetCompanyById(int id);
 
         //Claims Table
-        public IEnumerable<Claims> GetClaimsByCompanyId(int companyId);
+        public Task<List<Claims>> GetClaimsByCompanyId(int companyId);
 
-        public Claims GetClaimByUCR(string claimId);
+        public Task<Claims> GetClaimByUCR(string claimId);
 
-        public bool UpdateDatabase(Claims claims);
+        public Task<bool> UpdateDatabase(Claims claims);
     }
 }
