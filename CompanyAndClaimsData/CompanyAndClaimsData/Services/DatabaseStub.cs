@@ -1,6 +1,4 @@
 ﻿using CompanyAndClaimsData.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Collections.Generic;
 
 namespace CompanyAndClaimsData.Services;
 

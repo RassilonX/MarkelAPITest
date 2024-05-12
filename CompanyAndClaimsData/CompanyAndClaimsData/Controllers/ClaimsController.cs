@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.OpenApi;
-using Microsoft.AspNetCore.Http.HttpResults;
-using CompanyAndClaimsData.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using CompanyAndClaimsData.Models;
 using CompanyAndClaimsData.Services;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.Security.Claims;
 
 namespace CompanyAndClaimsData.Controllers;
 

@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.OpenApi;
-using Microsoft.AspNetCore.Http.HttpResults;
-using CompanyAndClaimsData.Models;
+﻿using CompanyAndClaimsData.Services;
 using Microsoft.AspNetCore.Mvc;
-using CompanyAndClaimsData.Services;
 using Newtonsoft.Json;
 
 namespace CompanyAndClaimsData.Controllers;

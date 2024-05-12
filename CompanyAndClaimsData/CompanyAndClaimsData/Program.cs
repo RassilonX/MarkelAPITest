@@ -1,5 +1,4 @@
 using CompanyAndClaimsData.Services;
-using CompanyAndClaimsData.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
