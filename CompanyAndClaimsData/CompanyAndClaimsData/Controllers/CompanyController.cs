@@ -18,7 +18,7 @@ public class CompanyController : ControllerBase
     [HttpGet("Company/{id}")]
     public IActionResult Company(int id)
     {
-        var data = _databaseService.GetCompanyById(id).Result;
+        var data = _databaseService.GetCompanyById(id)?.Result;
 
         if (data == null)
             return NotFound(JsonConvert.SerializeObject("Company does not exist"));
