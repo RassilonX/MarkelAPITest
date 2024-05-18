@@ -89,4 +89,18 @@ public class DatabaseStubTests
         dataCheck.closed.Should().BeTrue();
     }
     #endregion
+
+    #region Unhappy Path Tests
+    [Fact]
+    public void Stub_GetClaimByUCR_ReturnsNull() => _database.GetClaimByUCR("Wibble")?.Result.Should().BeNull();
+
+    [Fact]
+    public void Stub_GetGetCompanyById_ReturnsNull() => _database.GetCompanyById(12345)?.Result.Should().BeNull();
+
+    [Fact]
+    public void Stub_GetClaimsByCompanyId_ReturnsEmptyList() => _database.GetClaimsByCompanyId(12345)?.Result.Should().BeEmpty();
+
+    [Fact]
+    public void Stub_UpdateClaimDatabase_ReturnsFalse() => _database.UpdateClaimDatabase(new Claims { UCR = "Wibble" })?.Result.Should().BeFalse();
+    #endregion
 }
