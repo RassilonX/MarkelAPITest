@@ -60,7 +60,7 @@ public class ClaimsController : ControllerBase
         if (data == null)
             return NotFound(JsonConvert.SerializeObject("Claim does not exist"));
 
-        var result = _databaseService.UpdateDatabase(claimDto).Result;
+        var result = _databaseService.UpdateClaimDatabase(claimDto).Result;
 
         if (!result)
             return BadRequest(JsonConvert.SerializeObject("Failed to update the database"));

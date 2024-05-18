@@ -39,7 +39,7 @@ public class DatabaseStub : IDatabaseService
         return null;
     }
 
-    public Task<bool> UpdateDatabase(Claims updatedClaim)
+    public Task<bool> UpdateClaimDatabase(Claims updatedClaim)
     {
         var claimIndex = StubData.claimsData.FindIndex(c => c.UCR == updatedClaim.UCR);
 

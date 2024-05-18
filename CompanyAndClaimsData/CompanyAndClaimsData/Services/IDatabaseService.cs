@@ -12,6 +12,6 @@ namespace CompanyAndClaimsData.Services
 
         public Task<Claims> GetClaimByUCR(string claimId);
 
-        public Task<bool> UpdateDatabase(Claims claims);
+        public Task<bool> UpdateClaimDatabase(Claims claims);
     }
 }
