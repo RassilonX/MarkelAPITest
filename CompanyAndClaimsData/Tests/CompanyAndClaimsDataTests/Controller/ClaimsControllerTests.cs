@@ -2,9 +2,7 @@ using CompanyAndClaimsData.Controllers;
 using CompanyAndClaimsData.Models;
 using CompanyAndClaimsData.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Newtonsoft.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CompanyAndClaimsDataTests.Controller;
 

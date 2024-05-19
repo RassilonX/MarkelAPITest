@@ -1,10 +1,5 @@
 ﻿using CompanyAndClaimsData.Models;
 using CompanyAndClaimsData.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompanyAndClaimsDataTests.Services;
 
