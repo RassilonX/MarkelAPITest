@@ -19,7 +19,7 @@ public class ClaimsController : ControllerBase
     [HttpGet("CompanyClaims/{companyId}")]
     public IActionResult CompanyClaims(int companyId)
     {
-        var companyExists = _databaseService.GetCompanyById(companyId);
+        var companyExists = _databaseService.GetCompanyById(companyId).Result;
 
         if (companyExists == null)
             return NotFound(JsonConvert.SerializeObject("Company does not exist"));
